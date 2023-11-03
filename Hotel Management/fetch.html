@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+  <link rel="stylesheet" type="text/css" href="fetch.css" />
+</head>
+<body>
+  <h1>Booking Data</h1>
+  <table id="booking-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Room</th>
+        <th>Check-in</th>
+        <th>Check-out</th>
+      </tr>
+    </thead>
+    <tbody id="booking-list"></tbody>
+  </table>
+
+  <script type="module">
+    // Firebase configuration
+    const firebaseConfig = {
+  apiKey: "AIzaSyCsnohWy0mCYS3e8I7m-tHsaq1CCFNOx4M",
+  authDomain: "booking-7ac07.firebaseapp.com",
+  projectId: "booking-7ac07",
+  storageBucket: "booking-7ac07.appspot.com",
+  messagingSenderId: "957616194135",
+  appId: "1:957616194135:web:ae30d752afec3a0d00d912",
+  measurementId: "G-V2HVE3JNFK"
+};
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    const database = firebase.database();
+    const bookingRef = database.ref("BOOKING");
+
+    bookingRef.on("value", (snapshot) => {
+      const bookingList = document.getElementById("booking-list");
+      bookingList.innerHTML = ""; // Clear the existing table body
+
+      snapshot.forEach((childSnapshot) => {
+        const data = childSnapshot.val();
+        const newRow = document.createElement("tr"); // Create a table row
+        newRow.innerHTML = `
+          <td>${data.fname} ${data.lname}</td>
+          <td>${data.email}</td>
+          <td>${data.phoneno}</td>
+          <td>${data.typeofroom}</td>
+          <td>${data.checkin}</td>
+          <td>${data.checkout}</td>
+        `;
+        bookingList.appendChild(newRow); // Add the row to the table body
+      });
+    });
+  </script>
+</body>
+</html>

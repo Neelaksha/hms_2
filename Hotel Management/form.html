@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Hotel Booking</title>
+
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> 
+<!-- //font-awesome-icons -->
+<!-- Stylesheet -->
+<link href="form.css" rel='stylesheet' type='text/css' />
+<link type="text/css" rel="stylesheet" href="bootstrap.min.css" />
+<!-- //Stylesheet -->
+<!-- fonts --> 
+<link href="https://fonts.googleapis.com/css?family=Flamenco" rel="stylesheet">  
+
+<!-- // fonts-->
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+
+</head>
+<body>
+	<header>
+		<nav>
+			<div class="row">
+				<img src="images/logo8.png" class="logo">
+				<ul class="main-nav" id="check-class">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="Aboutus.html">About Us</a></li>
+					<li><a href="Form.html">Book Your Room</a></li>
+					<li><a href="attraction.html">Attractions </a></li>
+					<li><a href="login.html">Login </a></li>
+			</ul>
+					
+			</div>
+		</nav>
+	</header>
+<!--background-->
+<div class="container">
+	<div class="title">
+		<h2>BOOKING</h2>
+	</div>
+  <div class="d-flex">
+	<form action=""  id="BOOKING">
+		<div class="alert">Booking Successful!</div>
+		<input type="text" id="fname" placeholder="Enter your First name" required>
+		<input type="text" id="lname" placeholder="Enter your Last name" required>
+		<input type="email" id="email" placeholder="Enter your email" required><br><br>
+		<input type="number" id="phoneno" placeholder="Enter your phone no" required><br><br>
+		<input type="text" id="typeofroom" placeholder="Enter room type (Roya Pent House\Ocean Terrace Suit)" required><br><br>
+		<input type="number" id="noofroom" placeholder="Enter no of rooms required" required><br><br>
+		<input type="number" id="adult"  placeholder="Enter no of adults" required><br><br>
+		<input type="number" id="child" placeholder="Enter no of chlid" required><br><br>
+		<h5>Date of check in</h5>
+		<input type="date" id="checkin" placeholder="Enter date of check in" required><br><br>
+		<h5>Date of check out</h5>
+		<input type="date" id="checkout" placeholder="Enter date of check out" required><br><br>
+		<button type="submit"  >BOOK</button>
+
+	</div><!-- Yorder -->
+   </div>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase.js"></script>
+ <script src="form.js"></script>
+</body>
+</html>
